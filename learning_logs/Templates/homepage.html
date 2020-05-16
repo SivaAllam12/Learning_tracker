@@ -1,0 +1,40 @@
+{% extends 'basepage.html' %}
+{% block content %}
+ {% load static %}
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>Learning Log</h1>
+            <img src="{% static 'StayHome_is_fun_too5.jpg' %}" height="300" width="300" /></img>
+            <p class="lead text-muted">Here, you can see the courses which you're doing and log the entries related to it. Also, you can add the new courses and make entries related to it. </p>
+            <p>
+                <a href="{% url "learning_logs:courses" %}" class="btn btn-primary my-2">Courses</a>
+                <a href="{% url "learning_logs:addcourse" %}" class="btn btn-secondary my-2">Add course</a>
+            </p>
+
+        </div>
+    </section>
+
+
+
+</main>
+
+<footer class="text-muted">
+    <div class="container text-center">
+        <p style="color:dodgerblue">Siva Allam {% now "Y" %}</p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+<h1 style="text-align:center">Learning Logs</h1>
+
+<p>This app tracks your learnings</p>
+<p>
+    To view the courses that you're working on
+    <a href="">click here</a>
+</p>
+{% endblock content %}

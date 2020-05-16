@@ -1,0 +1,10 @@
+{% extends 'basepage.html' %}
+{% block content %}
+<p>Below are the courses that you're working on:</p>
+<ul>
+    {% for course in courses %}
+    <li><a href="{% url 'learning_logs:entrypage' course.id %}">{{course}}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'learning_logs:addcourse' %}">Add course</a>
+{% endblock content %}

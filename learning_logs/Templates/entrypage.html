@@ -1,0 +1,30 @@
+{% extends 'basepage.html' %}
+{% block content %}
+{% if entries %}
+
+    <ol>
+        <h3>Below are the entries for the course {{course}}:</h3>
+        {% for entry in entries %}
+
+        <li>
+            Date:  {{entry.Date}}<br />
+            Course Id:  {{entry.course_id}}<br />
+            Hours Spent:  {{entry.Hours_spent}}<br />
+            Status:  {{entry.status}}<br /><br />
+        </li>
+        
+        
+        {% endfor %}
+     </ol>   
+{% else %}
+        <p>Oops! No entries Yet.</p>
+{% endif %}
+<form action="{% url 'learning_logs:addentry' cid %}">
+    <input type="submit" value="Add a new Entry" ></input>
+</form><br />
+<!--<button type="button" formaction="{% url 'learning_logs:entrypage' cid %}">Delete this Course</button>-->
+        <form action="{% url 'learning_logs:delete_course' cid %}">
+            <input type="submit" value="Delete this course"></input>
+        </form>
+{% endblock content %}
+   

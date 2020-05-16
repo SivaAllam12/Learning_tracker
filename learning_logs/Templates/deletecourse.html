@@ -1,0 +1,10 @@
+{% extends 'basepage.html' %}
+{% block content %}
+<h3>Are you share you want to delete this course?</h3>
+<p>Note:If you delete this course all entries related to it will be removed.</p>
+<form action="{% url 'learning_logs:delete_course' cid %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Yes,I'm Sure" /></input>
+</form>
+<a href="{% url 'learning_logs:courses' %}"><button>No,take me back</button></a>
+{% endblock content %}
