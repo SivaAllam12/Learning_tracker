@@ -2,11 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\learning_logs",
-    "\\learning_tracker",
+    "\\learning_logs\\Templates",
     "\\users",
     "\\users\\Templates",
     "\\users\\Templates\\Registration"
   ],
-  "SelectedNode": "\\users\\Templates\\Registration\\register.html",
+  "SelectedNode": "\\learning_logs\\Templates\\basepage.html",
   "PreviewInSolutionExplorer": false
 }

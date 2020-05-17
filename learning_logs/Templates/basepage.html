@@ -58,8 +58,11 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <span class="hello-msg">Hello, {{request.user}}</span>
-
+                    {% if user.is_authenticated %}
+                        <span class="hello-msg">Hello, {{request.user}}</span>
+                    {% else %}
+                        <a class="hello-msg" href="{% url 'users:login' %}">Login</a>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="hello-msg" href="{% url 'users:logout' %}">Logout</a>
                     </li>
