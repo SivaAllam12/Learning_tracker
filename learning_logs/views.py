@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Course
+from .models import Entry
 from .forms import Courseform
 from .forms import Entryform
 from django.contrib.auth.decorators import login_required
@@ -34,6 +35,12 @@ def entrypage(request, cid):
     entries=course.entry_set.all()
     context={'entries':entries,'cid':cid,'course':course}
     return render(request,'entrypage.html',context)
+
+def entries(request):
+    date=request.POST['Date']
+    entries=Entry.objects.filter(Date=date)
+    context={'entries':entries,'date':date}
+    return render(request, 'dateentries.html', context)
 
 @login_required(login_url='users:login')
 def deletecourse(request, cid):

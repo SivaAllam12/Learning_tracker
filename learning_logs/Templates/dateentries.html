@@ -1,0 +1,24 @@
+{% extends 'basepage.html' %}
+{% block content %}
+{% if entries %}
+
+<ol>
+    <h3>Below are the entries for the date {{date}}:</h3>
+    {% for entry in entries %}
+
+    <li>
+        Course Name: {{entry.course_name}}<br />
+        Course Id: {{entry.course_id}}<br />
+        Date:  {{entry.Date}}<br />
+        Hours Spent:  {{entry.Hours_spent}}<br />
+        Status:  {{entry.status}}<br /><br />
+    </li>
+
+
+    {% endfor %}
+</ol>
+{% else %}
+<br /><br /><p style="color:red">Oops! No entries Yet on the given date.</p>
+{% endif %}
+
+{% endblock content %}
