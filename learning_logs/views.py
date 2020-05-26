@@ -11,7 +11,7 @@ def home(request):
 
 @login_required(login_url='users:login')
 def courses(request):
-    courses=Course.objects.all()
+    courses=Course.objects.filter(owner=request.user)
     context={'courses':courses}
     return render(request,'coursespage.html',context)
 
@@ -24,7 +24,10 @@ def addcourse(request):
     else:
         form=Courseform(request.POST)
         if form.is_valid():
-            form.save()
+            newform=form.save(commit=False)
+            newform.owner=request.user
+            newform.save()
+
             return redirect('learning_logs:courses')
     context={'form':form}
     return render(request,'addcourse.html',context)
