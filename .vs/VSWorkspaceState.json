@@ -2,11 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\learning_logs",
-    "\\learning_logs\\Templates",
-    "\\learning_logs\\Templates\\learning_logs",
+    "\\learning_tracker",
     "\\users",
     "\\users\\Templates"
   ],
-  "SelectedNode": "\\learning_logs\\Templates\\learning_logs\\homepage.html",
+  "SelectedNode": "\\Procfile",
   "PreviewInSolutionExplorer": false
 }
