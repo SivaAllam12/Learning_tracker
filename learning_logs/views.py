@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    return render(request,'homepage.html')
+    return render(request,'learning_logs/homepage.html')
 
 @login_required(login_url='users:login')
 def courses(request):
