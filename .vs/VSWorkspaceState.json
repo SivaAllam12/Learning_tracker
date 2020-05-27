@@ -3,10 +3,10 @@
     "",
     "\\learning_logs",
     "\\learning_logs\\Templates",
+    "\\learning_logs\\Templates\\learning_logs",
     "\\users",
-    "\\users\\Templates",
-    "\\users\\Templates\\Registration"
+    "\\users\\Templates"
   ],
-  "SelectedNode": "\\learning_logs\\views.py",
+  "SelectedNode": "\\learning_logs\\Templates\\learning_logs\\homepage.html",
   "PreviewInSolutionExplorer": false
 }
