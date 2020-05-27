@@ -1,0 +1,8 @@
+{% extends 'basepage.html' %}
+{% block content %}
+<form action="{% url 'learning_logs:addentry' cid %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit"></input>
+</form>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'basepage.html' %}
+{% block content %}
+<style>
+    p.ex1 {
+        padding-left: 15px;
+    }
+</style>
+{% if courses %}
+      <p>Below are the courses that you're working on:</p>
+<ul>
+    {% for course in courses %}
+    <li><a href="{% url 'learning_logs:entrypage' course.id %}">{{course}}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+    <br />
+    <br />
+    <p>&nbsp;&nbsp;&nbsp;Oops! there are no courses yet. Please add courses....</p>
+{% endif %}
+<a href="{% url 'learning_logs:addcourse' %}">&nbsp;&nbsp;&nbsp;Add course</a>
+<form action="{% url 'learning_logs:entries' %}" method="post">
+    {% csrf_token %}
+
+    <p class="ex1"><br /><br />If you want to view the courses for a particular date. Please provide the date in YYYY-MM-DD format and submit.</p>
+    &nbsp;&nbsp;<label for="Date">Date:</label>
+    <input type="text" name="Date"></input>
+    <input type="submit"></input>
+</form>
+{% endblock content %}

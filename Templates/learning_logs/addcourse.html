@@ -1,0 +1,9 @@
+{% extends 'basepage.html' %}
+{% block content %}
+<br /> <br />
+       <form action="{% url 'learning_logs:addcourse' %}" method="post">
+           {% csrf_token %}
+           {{ form.as_p }}
+           <pre><input type="submit"></input></pre>
+       </form>
+{% endblock content %}
