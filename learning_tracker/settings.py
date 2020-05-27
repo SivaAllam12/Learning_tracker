@@ -20,8 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'm(#3@mb(1k5oj-kpc@@3jgpzul@ogr)osw=m=)u(@xo!vd3$qy'
-SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be used, if set, instead)."
+SECRET_KEY = 'm(#3@mb(1k5oj-kpc@@3jgpzul@ogr)osw=m=)u(@xo!vd3$qy'
+#SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be used, if set, instead)."
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -58,7 +58,9 @@ ROOT_URLCONF = 'learning_tracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,'Templates'),
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
