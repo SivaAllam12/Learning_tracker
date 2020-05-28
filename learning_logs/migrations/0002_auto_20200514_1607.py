@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='entry',
             name='status',
-            field=models.CharField(choices=[('ip', 'In Progress'), ('c', 'Completed')], default='In Progress', max_length=2),
+            field=models.CharField(choices=[('ip', 'In Progress'), ('c', 'Completed')], default='In Progress', max_length=15),
             preserve_default=False,
         ),
         migrations.AlterField(
