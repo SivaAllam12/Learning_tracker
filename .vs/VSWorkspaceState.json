@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\learning_logs",
-    "\\learning_tracker",
     "\\users",
     "\\users\\Templates"
   ],
-  "SelectedNode": "\\Procfile",
+  "SelectedNode": "\\learning_logs\\tests.py",
   "PreviewInSolutionExplorer": false
 }
