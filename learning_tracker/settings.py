@@ -27,7 +27,7 @@ SECRET_KEY = 'm(#3@mb(1k5oj-kpc@@3jgpzul@ogr)osw=m=)u(@xo!vd3$qy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['damp-river-62548.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['learnings-tracker.herokuapp.com','127.0.0.1']
 
 
 # Application definition
