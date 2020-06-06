@@ -1,0 +1,29 @@
+{% extends 'basepage.html' %}
+{% block content %}
+
+<br><br>
+<h4>&nbsp Corona cases in India as on  {{  indian_cases.date  }}:</h4>
+
+<ul>
+	<p>New Cases -  {{indian_cases.dailyconfirmed}}</p>
+	<p>Total Cases -  {{indian_cases.totalconfirmed}}</p>
+	<p>Active Cases -  {{indian_active}}</p>
+	<p>Discharged -  {{indian_cases.totalrecovered}}</p>
+	<p>Deaths -  {{indian_cases.totaldeceased}}</p>
+</ul>
+<!-- {% for key,val in indian_cases.items %}
+        <ul>{{key}}
+        - {{val}}</ul>
+{% endfor %} -->
+
+<br>
+<h4>&nbsp Corona cases in Andhra Pradesh as on {{andhra_cases.lastupdatedtime }}:</h4>
+
+<ul>
+    <p>New Cases -  {{andhra_cases.deltaconfirmed}}</p>
+	<p>Total Cases -  {{andhra_cases.confirmed}}</p>
+	<p>Active Cases -  {{andhra_cases.active}}</p>
+	<p>Discharged -  {{andhra_cases.recovered}}</p>
+	<p>Deaths -  {{andhra_cases.deaths}}</p>
+</ul>
+{% endblock content %}

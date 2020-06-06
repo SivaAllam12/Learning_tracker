@@ -4,6 +4,7 @@ from .models import Entry
 from .forms import Courseform
 from .forms import Entryform
 from django.contrib.auth.decorators import login_required
+import requests
 
 
 def home(request):
@@ -70,3 +71,14 @@ def addentry(request, cid):
             return redirect('learning_logs:entrypage',cid)
     context={'form':form,'cid':cid}
     return render(request,'addentry.html',context)
+
+def covid19(request):
+    url='https://api.covid19india.org/data.json'
+    r=requests.get(url)
+    if r.status_code==200:
+        data=r.json()
+        indian_cases=data['cases_time_series']
+        andhra_cases=data['statewise']
+        indian_active=int(indian_cases[-1]['totalconfirmed'])-int(indian_cases[-1]['totalrecovered'])
+        context={'indian_cases':indian_cases[-1],'andhra_cases':andhra_cases[12],'indian_active':indian_active}
+        return render(request,'covid19.html',context)

@@ -11,4 +11,5 @@ urlpatterns = [
     path('entriespage',views.entries,name='entries'),
     path('delete_course/<int:cid>',views.deletecourse,name='delete_course'),
     path('addentry/<int:cid>',views.addentry,name='addentry'),
+    path('covid19/',views.covid19,name='covid19'),
     ]
