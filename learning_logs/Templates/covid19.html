@@ -4,13 +4,21 @@
 <br><br>
 <h4>&nbsp Corona cases in India as on  {{  indian_cases.date  }}:</h4>
 
-<ul>
-	<p>New Cases -  {{indian_cases.dailyconfirmed}}</p>
+<table>
+	<tb>New Cases</tb>
+	<tr>
+		<tb>{{indian_cases.dailyconfirmed}}</tb>
+		<tb>{{indian_cases.totalconfirmed}}</tb>
+		<tb>{{indian_cases.dailyconfirmed}}</tb>
+		<tb>{{indian_cases.dailyconfirmed}}</tb>
+	</tr>
+</table>
+	<!-- <p>New Cases -  {{indian_cases.dailyconfirmed}}</p>
 	<p>Total Cases -  {{indian_cases.totalconfirmed}}</p>
 	<p>Active Cases -  {{indian_active}}</p>
 	<p>Discharged -  {{indian_cases.totalrecovered}}</p>
-	<p>Deaths -  {{indian_cases.totaldeceased}}</p>
-</ul>
+	<p>Deaths -  {{indian_cases.totaldeceased}}</p> -->
+
 <!-- {% for key,val in indian_cases.items %}
         <ul>{{key}}
         - {{val}}</ul>

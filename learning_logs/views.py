@@ -80,5 +80,5 @@ def covid19(request):
         indian_cases=data['cases_time_series']
         andhra_cases=data['statewise']
         indian_active=int(indian_cases[-1]['totalconfirmed'])-int(indian_cases[-1]['totalrecovered'])
-        context={'indian_cases':indian_cases[-1],'andhra_cases':andhra_cases[12],'indian_active':indian_active}
+        context={'indian_cases':indian_cases[-1],'andhra_cases':andhra_cases,'indian_active':indian_active}
         return render(request,'covid19.html',context)

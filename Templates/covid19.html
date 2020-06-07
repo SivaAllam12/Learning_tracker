@@ -1,29 +1,77 @@
 {% extends 'basepage.html' %}
 {% block content %}
+<style type="text/css">
+	  table.center {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+  }
+
+</style>
 
 <br><br>
-<h4>&nbsp Corona cases in India as on  {{  indian_cases.date  }}:</h4>
+<h4 style="text-align:center;">Covid19 Dashboard</h4>
 
-<ul>
-	<p>New Cases -  {{indian_cases.dailyconfirmed}}</p>
+<table class="center">
+  <!-- <caption>A summary of the UK's most famous punk bands</caption> -->
+  <thead>
+    <tr>
+      <th scope="col">       </th>
+      <th scope="col">New_Cases&nbsp&nbsp</th>
+      <th scope="col">Total Cases&nbsp&nbsp</th>
+      <th scope="col">Active Cases&nbsp&nbsp</th>
+      <th scope="col">Discharged&nbsp&nbsp</th>
+      <th scope="col">Deaths&nbsp&nbsp</th>
+      <th scope="col">Last Updated&nbsp&nbsp</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">India</th>
+      <td>{{indian_cases.dailyconfirmed}}</td>
+      <td>{{indian_cases.totalconfirmed}}</td>
+      <td>{{indian_active}}</td>
+      <td>{{indian_cases.totalrecovered}}</td>
+      <td>{{indian_cases.totaldeceased}}</td>
+      <td>{{indian_cases.date}}</td>
+    </tr>
+    {% for dicts in andhra_cases %}
+    <tr>
+    
+      <th scope="row">{{dicts.state}}</th>
+      <td>{{dicts.deltaconfirmed}}</td>
+      <td>{{dicts.confirmed}}</td>
+      <td>{{dicts.active}}</td>
+      <td>{{dicts.recovered}}</td>
+      <td>{{dicts.deaths}}</td>
+      <td>{{dicts.lastupdatedtime}}</td>
+     
+    </tr>
+    {% endfor %}
+ 
+  </tbody>
+ </table>
+
+<!-- <table>
+	<td>New Cases</td>
+	<tr>
+		<td>India {{indian_cases.dailyconfirmed}}</td>
+		<td>{{indian_cases.totalconfirmed}}</td>
+		<td>{{indian_active}}</td>
+		<td>{{indian_cases.totalrecovered}}</td>
+		<td>{{indian_cases.totaldeceased}}</td>
+	</tr>
+</table> -->
+	<!-- <p>New Cases -  {{indian_cases.dailyconfirmed}}</p>
 	<p>Total Cases -  {{indian_cases.totalconfirmed}}</p>
 	<p>Active Cases -  {{indian_active}}</p>
 	<p>Discharged -  {{indian_cases.totalrecovered}}</p>
-	<p>Deaths -  {{indian_cases.totaldeceased}}</p>
-</ul>
+	<p>Deaths -  {{indian_cases.totaldeceased}}</p> -->
+
 <!-- {% for key,val in indian_cases.items %}
         <ul>{{key}}
         - {{val}}</ul>
 {% endfor %} -->
 
-<br>
-<h4>&nbsp Corona cases in Andhra Pradesh as on {{andhra_cases.lastupdatedtime }}:</h4>
-
-<ul>
-    <p>New Cases -  {{andhra_cases.deltaconfirmed}}</p>
-	<p>Total Cases -  {{andhra_cases.confirmed}}</p>
-	<p>Active Cases -  {{andhra_cases.active}}</p>
-	<p>Discharged -  {{andhra_cases.recovered}}</p>
-	<p>Deaths -  {{andhra_cases.deaths}}</p>
-</ul>
 {% endblock content %}
